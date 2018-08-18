@@ -221,16 +221,7 @@ func DataInsert2()
 	     call setline(line, '#      Last Modified: '.strftime("%Y-%m-%d %H:%M:%S"))
 	  endif
   endfunc
-"if &filetype == 'python'
-"	autocmd FileWritePre,BufWritePre  *.py  exec ":call DataInsert2()"
-"elseif &filetype == 'Makefile'
-"	autocmd FileWritePre,BufWritePre  Makefile exec ":call DataInsert2()"
-"elseif &filetype == 'make'
-"	autocmd FileWritePre,BufWritePre  *.mk exec ":call DataInsert2()"
-"elseif &filetype == 'sh'
-"	autocmd FileWritePre,BufWritePre  *.sh exec ":call DataInsert2()"
-"else
-    autocmd FileWritePre,BufWritePre  *.[ch],*.cpp,*.hpp ks|call DataInsert1() |'s
+autocmd FileWritePre,BufWritePre  *.[ch],*.cpp,*.hpp ks|call DataInsert1() |'s
 autocmd FileWritePre,BufWritePre  *.sh,*.py,*.mk,Makefile ks|call DataInsert2() |'s
-"endif
+
 "SET Last Modified Time END
